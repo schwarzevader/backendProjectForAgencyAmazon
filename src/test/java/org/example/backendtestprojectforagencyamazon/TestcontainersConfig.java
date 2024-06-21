@@ -28,8 +28,6 @@ import javax.sql.DataSource;
 @Slf4j
 public class TestcontainersConfig {
 
-
-
 	@Container
 	static MySQLContainer<?> mysqlContainer =
 			new MySQLContainer<>("mysql:latest")
