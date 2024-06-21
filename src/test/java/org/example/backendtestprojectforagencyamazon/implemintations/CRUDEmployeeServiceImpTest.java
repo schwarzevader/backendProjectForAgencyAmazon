@@ -2,21 +2,26 @@ package org.example.backendtestprojectforagencyamazon.implemintations;
 
 import lombok.extern.slf4j.Slf4j;
 
-import org.example.backendtestprojectforagencyamazon.TestcontainersConfiguration;
+import org.example.backendtestprojectforagencyamazon.TestcontainersConfig;
 import org.example.backendtestprojectforagencyamazon.domain.SomeEmployee;
 import org.example.backendtestprojectforagencyamazon.repo.EmployeeRepo;
 import org.example.backendtestprojectforagencyamazon.service.implemintations.CRUDEmployeeServiceImp;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
 
+
+//@SpringBootTest(classes = TestcontainersConfig.class)
+//@AutoConfigureMockMvc(printOnlyOnFailure = false)
 @SpringBootTest
 @Slf4j
-class CRUDEmployeeServiceImpTest extends TestcontainersConfiguration {
+
+class CRUDEmployeeServiceImpTest extends TestcontainersConfig {
 
     @Autowired
     private EmployeeRepo employeeRepo;
