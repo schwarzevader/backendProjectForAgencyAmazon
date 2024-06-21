@@ -2,6 +2,7 @@ package org.example.backendtestprojectforagencyamazon.implemintations;
 
 import lombok.extern.slf4j.Slf4j;
 
+import org.example.backendtestprojectforagencyamazon.TestcontainersConfiguration;
 import org.example.backendtestprojectforagencyamazon.domain.SomeEmployee;
 import org.example.backendtestprojectforagencyamazon.repo.EmployeeRepo;
 import org.example.backendtestprojectforagencyamazon.service.implemintations.CRUDEmployeeServiceImp;
@@ -15,7 +16,7 @@ import static org.junit.Assert.assertFalse;
 
 @SpringBootTest
 @Slf4j
-class CRUDEmployeeServiceImpTest {
+class CRUDEmployeeServiceImpTest extends TestcontainersConfiguration {
 
     @Autowired
     private EmployeeRepo employeeRepo;
@@ -32,11 +33,9 @@ class CRUDEmployeeServiceImpTest {
     }
     @Test
     void creat() {
-
         // Given
         SomeEmployee someEmployee = crudEmployeeServiceImp
                 .create(newEmployee());
-
         log.info("employee : "+someEmployee.toString());
         // Then
         assertEquals(NAME, someEmployee.getName());
